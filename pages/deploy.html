@@ -355,16 +355,7 @@
                 <h1 class="display-4 border-bottom mb-5">Despliegue</h1>
 
                 <p>
-                    Una vez descargado el proyecto es necesario descomprimir el archivo .zip, tras ésta acción se
-                    tendrán 2 directorios:
-                <ul>
-                    <li>
-                        barberstudio: Incluye el código fuente del proyecto.
-                    </li>
-                    <li>
-                        docs: Documentación completa del proyecto.
-                    </li>
-                </ul>
+                    Una vez obtenido el proyecto es necesario descomprimir el archivo .zip.
                 </p>
 
                 <p>
@@ -372,18 +363,26 @@
                 </p>
 
                 <p>
-                    Luego debemos crear una base de datos, puedes realizarlo desde la terminal, o bien, desde la interfaz gráfica de phpMyAdmin. La nombraremos <code>coderstrike_barber_studio</code>.
+                    Luego debemos crear una base de datos, puedes realizarlo desde la terminal, o bien, desde la interfaz gráfica de phpMyAdmin. La nombraremos <code>coderstrike_barberstudio_pro</code>.
                 </p>
 
                 <p>
                     Dentro de la raíz del proyecto, debemos renombrar el archivo <strong>.env.example</strong> a <strong>.env</strong>.
                     Posteriormente en dicho archivo, modificaremos los valores de las siguientes constantes:
                     <ul>
-                        <li>DB_DATABASE=coderstrike_baber_studio</li>
+                        <li>DB_DATABASE=coderstrike_barberstudio_pro</li>
                         <li>DB_USERNAME=root</li>
                         <li>DB_PASSWORD=</li>
                     </ul>
                 </p>
+
+                <div class="alert alert-warning mt-5" role="alert">
+                    <strong>Atención!</strong> Antes de continuar, los usuarios de <strong>Windows</strong> tendrán que habilitar la extension <code>zip</code> dentro del archivo de configuración <strong>php.ini</strong>.
+                </div>
+
+                <p>Para ello, deberán editar el archivo <code>php.ini</code> que se encuentra en: <strong>C:\xampp\php</strong>. Lo que debemos hacer es editar la linea <code>;extension=zip</code>, quitando el <code>;</code> y guardando los cambios. Posteriormente reiniciaremos el servicio de Apache desde el panel de control de Xampp.</p>
+
+                <p class="mb-5">Por último, debemos habilitar la extensión GD. Siguiendo el mismo procedimiento, debemos quitar el <code>;</code> de la linea <code>;extension=gd</code>.</p>
 
                 <p>Navegue hasta el directorio raíz del proyecto y ejecute en la terminal:</p>
 
