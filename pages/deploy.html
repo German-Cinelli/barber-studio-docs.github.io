@@ -377,14 +377,27 @@
                 </p>
 
                 <div class="alert alert-warning mt-5" role="alert">
-                    <strong>Atención!</strong> Antes de continuar, los usuarios de <strong>Windows</strong> tendrán que habilitar la extension <code>zip</code> dentro del archivo de configuración <strong>php.ini</strong>.
+                    <strong>Atención!</strong> Antes de continuar, los usuarios de <strong>Windows</strong> tendrán que habilitar la extension <code>zip</code> y <code>gd</code> dentro del archivo de configuración <strong>php.ini</strong>.
                 </div>
 
-                <p>Para ello, deberán editar el archivo <code>php.ini</code> que se encuentra en: <strong>C:\xampp\php</strong>. Lo que debemos hacer es editar la linea <code>;extension=zip</code>, quitando el <code>;</code> y guardando los cambios. Posteriormente reiniciaremos el servicio de Apache desde el panel de control de Xampp.</p>
+                <p>Para ello, deberán editar el archivo <code>php.ini</code> que se encuentra en: <strong>C:\xampp\php</strong>. Lo que debemos hacer es editar la linea <code>;extension=zip</code> y <code>;extension=gd</code>, quitando el <code>;</code> y guardando los cambios.</p>
 
-                <p class="mb-5">Por último, debemos habilitar la extensión GD. Siguiendo el mismo procedimiento, debemos quitar el <code>;</code> de la linea <code>;extension=gd</code>.</p>
+                <p>
+                    Por último, debemos reiniciar el servidor apache desde el panel de control de Xampp, y ejecutar los siguientes comandos en nuestro proyecto:
+                    <ul>
+                        <li>
+                            php artisan route:clear
+                        </li>
+                        <li>
+                            php artisan cache:clear
+                        </li>
+                        <li>
+                            php artisan optimize:clear
+                        </li>
+                    </ul>
+                </p>
 
-                <p>Navegue hasta el directorio raíz del proyecto y ejecute en la terminal:</p>
+                <p class="mt-5">Navegue hasta el directorio raíz del proyecto y ejecute en la terminal:</p>
 
                 <div class="docs-code-block">
                     <pre class="shadow-lg rounded"><code class="bash hljs">$ composer update</code></pre>
